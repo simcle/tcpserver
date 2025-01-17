@@ -1,0 +1,21 @@
+{
+  "name": "modbustcp",
+  "version": "1.0.0",
+  "description": "Mqtt Over modbus TCP",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon app.js"
+  },
+  "author": "Nendi Sofiandy",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  },
+  "dependencies": {
+    "jsmodbus": "^4.0.10",
+    "modbus-serial": "^8.0.17",
+    "mqtt": "^5.10.3"
+  }
+}
