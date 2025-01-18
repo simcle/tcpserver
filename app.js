@@ -1,7 +1,7 @@
 import ModbusRTU from 'modbus-serial'
 import { mqttPublish } from './mqttclient.js';
 
-import holdingRegisters from './holdingregisters.js';
+import holdingRegisters from './holdingRegisters.js';
 import coils from './colis.js';
 holdingRegisters[1] = 10
 const vector = {

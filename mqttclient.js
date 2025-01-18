@@ -1,5 +1,5 @@
 import mqtt from "mqtt";
-import holdingRegisters from "./holdingregisters.js";
+import holdingRegisters from "./holdingRegisters.js";
 import coils from "./colis.js";
 const plcAddress = '192.168.0.25'
 const plcPort  = 502
@@ -37,7 +37,7 @@ const sendRequest = () => {
 
 
 export const mqttPublish = (ck, fc, addr, val) => {
-    const formatReq = `0 ${ck} 0 ${plcAddress} ${plcPort} 5 ${plcID} ${fc} ${addr} ${val}`
+    const formatReq = `0 ${ck} 0 ${plcAddress} ${plcPort} 5 ${plcID} ${fc} ${addr+1} ${val}`
     console.log(formatReq)
     client.publish(publishTopic, formatReq)
 }
@@ -48,6 +48,7 @@ client.on('message', (topic, message) => {
     const data = message.toString().split(" ")
     const trascationID = parseInt(data[0])
     const registData = data.slice(2).map(Number)
+    console.log(registData)
     // console.log(data)
     switch (trascationID) {
         case 1: {
